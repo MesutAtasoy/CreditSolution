@@ -24,6 +24,7 @@ The application evaluates the credit application based on the credit score and m
   - Cache : Redis
   - Service Discovery : Consul 
   - Gateway : Ocelot
+  - Documentation : Swagger
 
 ## Project Setup 
 1. Clone the repository 
