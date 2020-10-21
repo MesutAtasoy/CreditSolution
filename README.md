@@ -1,5 +1,5 @@
 # Credit Solution
-A Simple Microservices Example
+A Simple Microservices Example ![alt text](https://github.com/MesutAtasoy/CreditSolution/workflows/Docker%20Compose%20CI/badge.svg)
 
 ![alt text](https://github.com/MesutAtasoy/CreditSolution/blob/master/images/overview.png)
 
