@@ -1,0 +1,98 @@
+version: '3.4'
+
+services:
+  creditgateway.api:
+    environment:
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "6010:80"
+    networks:
+      - credit-network
+    depends_on:
+      - rabbit
+      - postgresdb
+      
+  credit.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - ConnectionString=host=postgresdb;port=5432;database=Credit;username=postgres;password=15961596
+      - rabbitMQUrl=amqp://guest:guest@rabbit/CUSTOM_HOST
+    ports:
+      - "6001:80"
+    networks:
+      - credit-network
+    depends_on:
+      - rabbit
+      - postgresdb      
+           
+  creditscore.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - ConnectionString=host=postgresdb;port=5432;database=CreditScore;username=postgres;password=15961596
+    ports:
+      - "6002:80"
+    networks:
+      - credit-network     
+    depends_on:
+      - rabbit
+      - postgresdb
+
+  sms.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - ConnectionString=host=postgresdb;port=5432;database=Sms;username=postgres;password=15961596
+      - rabbitMQUrl=amqp://guest:guest@rabbit/CUSTOM_HOST
+    ports:
+      - "6003:80"
+    networks:
+      - credit-network
+    depends_on:
+      - rabbit
+      - postgresdb      
+
+  postgresdb:
+    image: postgres:12
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "15961596"
+      POSTGRES_MULTIPLE_DATABASES: "CreditScore,Credit,Sms"
+    networks:
+      - credit-network  
+      
+  cache.data:
+    ports:
+      - "6379:6379"
+    restart: always
+    networks:
+      - credit-network      
+
+  rabbit:
+    restart: always
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    environment:
+      - RABBITMQ_DEFAULT_VHOST=CUSTOM_HOST
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    networks:
+      - credit-network
+        
+  consul:
+    ports:
+      - "8500:8500"      
+    networks:
+      - credit-network
+      
+      
+networks:
+  credit-network:
+    external: true
+   
+

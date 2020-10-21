@@ -1,0 +1,74 @@
+﻿[
+  {
+    "IdentityNumber": "11111111111",
+    "Score" : 750,
+    "IsActive": "true",
+    "IsDeleted" : "false",
+    "UserCreditScoreHistories" :[
+      {
+        "Score" : 400,
+        "IsActive": "true",
+        "IsDeleted" : "false"
+      },
+      {
+        "Score" : 350,
+        "IsActive": "true",
+        "IsDeleted" : "false"
+      }
+    ]
+  },
+  {
+    "IdentityNumber": "22222222222",
+    "Score" : 1050,
+    "IsActive": "true",
+    "IsDeleted" : "false",
+    "UserCreditScoreHistories" :[
+      {
+        "Score" : 500,
+        "IsActive": "true",
+        "IsDeleted" : "false"
+      },
+      {
+        "Score" : 550,
+        "IsActive": "true",
+        "IsDeleted" : "false"
+      }
+    ]
+  },
+  {
+    "IdentityNumber": "33333333333",
+    "Score" : 400,
+    "IsActive": "true",
+    "IsDeleted" : "false",
+    "UserCreditScoreHistories" :[
+      {
+        "Score" : 200,
+        "IsActive": "true",
+        "IsDeleted" : "false"
+      },
+      {
+        "Score" : 200,
+        "IsActive": "true",
+        "IsDeleted" : "false"
+      }
+    ]
+  },
+  {
+    "IdentityNumber": "44444444444",
+    "Score" : 1000,
+    "IsActive": "true",
+    "IsDeleted" : "false",
+    "UserCreditScoreHistories" :[
+      {
+        "Score" : 500,
+        "IsActive": "true",
+        "IsDeleted" : "false"
+      },
+      {
+        "Score" : 550,
+        "IsActive": "true",
+        "IsDeleted" : "false"
+      }
+    ]
+  }
+]

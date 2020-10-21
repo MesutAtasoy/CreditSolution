@@ -1,0 +1,51 @@
+version: '3.4'
+
+services:
+  creditgateway.api:
+    container_name: creditgateway.api
+    image: ${DOCKER_REGISTRY-}creditgatewayapi
+    build:
+      context: .
+      dockerfile: CreditGateway/CreditGateway.Api/Dockerfile
+      
+  credit.api:
+    container_name: credit.api
+    image: ${DOCKER_REGISTRY-}creditapi
+    build:
+      context: .
+      dockerfile: Credit/Credit.Api/Dockerfile
+        
+  creditscore.api:
+    container_name: creditscore.api
+    image: ${DOCKER_REGISTRY-}creditscoreapi
+    build:
+      context: .
+      dockerfile: CreditScore/CreditScore.Api/Dockerfile
+  
+  sms.api:
+    container_name: sms.api
+    image: ${DOCKER_REGISTRY-}smsapi
+    build:
+      context: .
+      dockerfile: Sms/Sms.Api/Dockerfile      
+        
+  postgresdb:
+    image: postgres:12
+    container_name: postgresdb
+  
+  cache.data:
+    container_name: cache.data
+    image: redis:alpine    
+  
+  rabbit:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbit
+
+  consul:
+    image: consul:latest
+    command: consul agent -dev -log-level=warn -ui -client=0.0.0.0
+    hostname: consul
+    container_name: consul        
+      
+  
+  

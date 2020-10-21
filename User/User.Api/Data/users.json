@@ -1,0 +1,10 @@
+﻿[
+  {
+    "Id": "B9CAC40A-2EBF-4E3C-8987-45DD2617704C",
+    "Name" : "Mesut Atasoy",
+    "PhoneNumber" : "05512048990",
+    "IdentificationNumber" : "11111111111",
+    "IsActive": "true",
+    "IsDeleted" : "false"
+  }
+]
