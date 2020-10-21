@@ -16,7 +16,7 @@ The application evaluates the credit application based on the credit score and m
 - Front End Side : It's coded by Angular.
 
 ## Tech Stack
- All service projects are written with .Net Core 3.1 framework. Front end project (https://github.com/MesutAtasoy/CreditSolutionUI) with written by Angular. Some design patterns are implemented such as Decorator pattern, Repository pattern, Command Query Responsibility Segregation. An Unit test is added Credit API project. It tests evaluation of credit with parameters.
+ All service projects are written with .Net Core 3.1 framework. Front end project (https://github.com/MesutAtasoy/CreditSolutionUI) with written by Angular. Some design patterns are implemented such as Decorator pattern, Repository pattern, Command Query Responsibility Segregation. An Unit test is added for Credit API project. It tests evaluation of credit with parameters.
  
   - Database : PostgreSQL
   - ORM : EntityFramework Core 3.1
