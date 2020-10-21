@@ -6,17 +6,17 @@ A Simple Microservices Example
 The application evaluates the credit application based on the credit score and monthly income. After evaluation, sends a informational message to the user as a result of the evaluation.
 
 ## Project Overview
-  - Gatewap API : It's responsible for routing requests to microservices
-  - Credit Score API : It's responsible for user's credit score. All user credit scores are stored by it.
-  - Credit API : It's responsible for evaluating credit requests. It depends on Credit Score API. It gets user's credit score from Credit Score API
-  - SMS API : It's responsible for sending messages. It consumes published messages for sending message and stores message logs. 
-  - Service Discovery : It's responsible for health check of microservices.
+  - Gatewap API : It's responsible for routing requests to microservices. (http://localhost:6010)
+  - Credit Score API : It's responsible for user's credit score. All user credit scores are stored by it. (http://localhost:6002)
+  - Credit API : It's responsible for evaluating credit requests. It depends on Credit Score API. It gets user's credit score from Credit Score API (http://localhost:6001)
+  - SMS API : It's responsible for sending messages. It consumes published messages for sending message and stores message logs. (http://localhost:6003)
+  - Service Discovery : It's responsible for health check of microservices. (http://localhost:8500)
   
 
 - Front End Side : It's coded by Angular.
 
 ## Tech Stack
- All service projects are written by .Net Core 3.1 framework. Front end project is written by Angular. Some design patterns 
+ All service projects are written by .Net Core 3.1 framework. Front end project (https://github.com/MesutAtasoy/CreditSolutionUI) is written by Angular. Some design patterns 
  are implemented such as Decorator pattern, Repository pattern, Command Query Responsibility Segregation. 
   - Database : PostgreSQL
   - ORM : EntityFramework Core 3.1
