@@ -37,3 +37,11 @@ The application evaluates the credit application based on the credit score and m
 
 4. Run the containers
 `docker-compose up -d` 
+
+## API Documentations
+  - Credit Score API : http://localhost:6002/swagger/index.html
+  - Credit API : http://localhost:6001/swagger/index.html
+
+Navigate to http://localhost:8500/ to ensure the containers are healthly using Consul (Service Discovery)
+
+
