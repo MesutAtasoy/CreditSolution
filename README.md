@@ -3,7 +3,7 @@ A Simple Microservices Example ![alt text](https://github.com/MesutAtasoy/Credit
 
 ![alt text](https://github.com/MesutAtasoy/CreditSolution/blob/master/images/overview.png)
 
-The application evaluates the credit application based on the credit score and monthly income. After evaluation, sends a informational message to the user as a result of the evaluation.
+The application evaluates the credit application based on the credit score and monthly income. After evaluation, sends an informational message to the user as a result of the evaluation.
 
 ## Project Overview
   - Gatewap API : It's responsible for routing requests to microservices. (http://localhost:6010)
