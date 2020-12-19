@@ -52,20 +52,13 @@ namespace Credit.Application.Commands.UserCreditRequest.CreateUserCreditRequest
                 .Evaluate();
 
             var status = creditEvaluation.Approved ? "Approved" : "Rejected";
-            await _userCreditRequestRepository.AddRequestAsync(new Domain.UserCreditRequest
-            {
-                Name = request.Name,
-                IdentityNumber = request.IdentityNumber,
-                PhoneNumber = request.PhoneNumber,
-                Status = status,
-                CreditLimit = creditEvaluation.CreditLimit,
-                MonthlyIncome = request.MonthlyIncome,
-                CreditLimitMultiplier = 4,
-                CreatedOnUtc = DateTime.UtcNow,
-                IsActive = true,
-                IsDeleted = false,
-                CreatedBy = default(Guid)
-            });
+            await _userCreditRequestRepository.AddRequestAsync(new Domain.UserCreditRequest(request.IdentityNumber,
+                request.Name,
+                request.PhoneNumber,
+                request.MonthlyIncome,
+                creditEvaluation.CreditLimit,
+                4,
+                status));
 
             response.Payload = new CreateUserCreditRequestViewModel
             {
